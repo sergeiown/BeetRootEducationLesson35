@@ -26,6 +26,25 @@ html {
       background-color: rgba($color: #fff, $alpha: 0.1);
       box-shadow: 0 0 1rem #000;
       border-radius: 1rem;
+
+      .green {
+        padding: 7rem;
+        box-shadow: none;
+        background: transparent url(../img/traffic-light-green.svg) center
+          center / 90% 90% no-repeat;
+      }
+      .red {
+        padding: 7rem;
+        box-shadow: none;
+        background: transparent url(../img/traffic-light-red.svg) center center /
+          90% 90% no-repeat;
+      }
+      .yellow {
+        padding: 7rem;
+        box-shadow: none;
+        background: transparent url(../img/traffic-light-yellow.svg) center
+          center / 90% 90% no-repeat;
+      }
     }
 
     button {
@@ -36,6 +55,15 @@ html {
       border-radius: 1rem;
       border: none;
       box-shadow: 0 0 1rem #000;
+      transition: all ease-in-out 0.1s;
+
+      &:hover {
+        box-shadow: 0 0 1.5rem #000;
+      }
+
+      &:active {
+        box-shadow: 0 0 2.5rem #000;
+      }
     }
   }
 }
