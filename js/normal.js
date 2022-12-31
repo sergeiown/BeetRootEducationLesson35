@@ -25,4 +25,12 @@ function showHideListOfSongs() {
   }
 }
 
-export { showHideListOfSongs };
+function showHideModalWindow() {
+  const modalWindow = document.querySelector("#modal");
+  const windowButton = document.querySelector("#modal-button");
+
+  modalWindow.classList.toggle("modal-window-content");
+  windowButton.classList.toggle("modal-window-button");
+}
+
+export { showHideListOfSongs, showHideModalWindow };

@@ -1,3 +1,7 @@
+const listButton = document.querySelector(".list-button");
+const windowButton = document.querySelector("#modal-button");
+const closeButton = document.querySelector(".close-button");
+
 const playList = [
   {
     author: "LED ZEPPELIN",
@@ -40,5 +44,6 @@ localStorage.setItem(
 
 import * as normal from "./normal.js";
 
-const listButton = document.querySelector(".list-button");
 listButton.addEventListener("click", normal.showHideListOfSongs);
+windowButton.addEventListener("click", normal.showHideModalWindow);
+closeButton.addEventListener("click", normal.showHideModalWindow);

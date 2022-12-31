@@ -23,9 +23,14 @@ html {
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      gap: 0.5rem;
       background-color: rgba($color: #fff, $alpha: 0.1);
       box-shadow: 0 0 1rem #000;
       border-radius: 1rem;
+
+      .modal-window-content {
+        display: none;
+      }
 
       .green {
         padding: 7rem;
@@ -64,6 +69,10 @@ html {
       &:active {
         box-shadow: 0 0 2.5rem #000;
       }
+    }
+
+    .modal-window-button {
+      visibility: hidden;
     }
   }
 }
