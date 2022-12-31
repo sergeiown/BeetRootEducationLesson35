@@ -29,8 +29,30 @@ function showHideModalWindow() {
   const modalWindow = document.querySelector("#modal");
   const windowButton = document.querySelector("#modal-button");
 
-  modalWindow.classList.toggle("modal-window-content");
-  windowButton.classList.toggle("modal-window-button");
+  modalWindow.classList.toggle(
+    "modal-window-content"
+  ); /* show or hide window */
+  windowButton.classList.toggle(
+    "modal-window-button"
+  ); /* show or hide button 'show window' */
 }
 
-export { showHideListOfSongs, showHideModalWindow };
+function changeTrafficLightColor() {
+  const trafficLight = document.querySelector("#traffic-light");
+
+  if (trafficLight.classList.contains("green")) {
+    trafficLight.classList.toggle("green");
+    trafficLight.classList.toggle("red");
+    return;
+  } else if (trafficLight.classList.contains("red")) {
+    trafficLight.classList.toggle("red");
+    trafficLight.classList.toggle("yellow");
+    return;
+  } else if (trafficLight.classList.contains("yellow")) {
+    trafficLight.classList.toggle("yellow");
+    trafficLight.classList.toggle("green");
+    return;
+  } /* simply remove and add classes to show different backgrounds */
+}
+
+export { showHideListOfSongs, showHideModalWindow, changeTrafficLightColor };

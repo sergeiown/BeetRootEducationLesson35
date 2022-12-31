@@ -1,6 +1,7 @@
 const listButton = document.querySelector(".list-button");
 const windowButton = document.querySelector("#modal-button");
 const closeButton = document.querySelector(".close-button");
+const trafficLightButton = document.querySelector(".traffic-light-button");
 
 const playList = [
   {
@@ -47,3 +48,4 @@ import * as normal from "./normal.js";
 listButton.addEventListener("click", normal.showHideListOfSongs);
 windowButton.addEventListener("click", normal.showHideModalWindow);
 closeButton.addEventListener("click", normal.showHideModalWindow);
+trafficLightButton.addEventListener("click", normal.changeTrafficLightColor);
