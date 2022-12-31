@@ -27,6 +27,11 @@ html {
       background-color: rgba($color: #fff, $alpha: 0.1);
       box-shadow: 0 0 1rem #000;
       border-radius: 1rem;
+      @extend %smooth-appearance;
+
+      li {
+        @extend %smooth-appearance;
+      }
 
       .modal-window-content {
         display: none;
@@ -94,5 +99,25 @@ html {
 @media only screen and (max-width: 320px) {
   html {
     font-size: 62.5%;
+  }
+}
+
+//animation
+%smooth-appearance {
+  animation-name: open;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
