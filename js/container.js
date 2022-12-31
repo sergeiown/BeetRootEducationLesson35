@@ -39,3 +39,6 @@ localStorage.setItem(
 ); /* add playlist to local storage as a string */
 
 import * as normal from "./normal.js";
+
+const listButton = document.querySelector(".list-button");
+listButton.addEventListener("click", normal.showHideListOfSongs);
