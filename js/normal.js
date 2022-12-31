@@ -42,17 +42,39 @@ function changeTrafficLightColor() {
 
   if (trafficLight.classList.contains("green")) {
     trafficLight.classList.toggle("green");
-    trafficLight.classList.toggle("red");
+    trafficLight.classList.toggle("yellow");
+    localStorage.setItem(
+      "trafficLightPreviousState",
+      "green"
+    ); /* save the traffic light state to the locale storage */
+
     return;
   } else if (trafficLight.classList.contains("red")) {
     trafficLight.classList.toggle("red");
     trafficLight.classList.toggle("yellow");
+    localStorage.setItem(
+      "trafficLightPreviousState",
+      "red"
+    ); /* save the traffic light state to the locale storage */
+
     return;
-  } else if (trafficLight.classList.contains("yellow")) {
+  } else if (
+    trafficLight.classList.contains("yellow") &&
+    localStorage.trafficLightPreviousState === "red"
+  ) {
     trafficLight.classList.toggle("yellow");
     trafficLight.classList.toggle("green");
+
     return;
-  } /* simply remove and add classes to show different backgrounds */
+  } else if (
+    trafficLight.classList.contains("yellow") &&
+    localStorage.trafficLightPreviousState === "green"
+  ) {
+    trafficLight.classList.toggle("yellow");
+    trafficLight.classList.toggle("red");
+
+    return;
+  } /* simply remove and add classes to show different backgrounds with the checking of previous traffic light state */
 }
 
 export { showHideListOfSongs, showHideModalWindow, changeTrafficLightColor };
